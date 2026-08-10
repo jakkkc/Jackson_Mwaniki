@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Reveal from '../components/Reveal'
 import { supabase } from '../lib/supabase'
 
 type Project = {
@@ -49,7 +50,8 @@ export default function Projects() {
       ) : (
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <div key={project.id} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col hover:bg-white/10 hover:border-pink-400/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-500/10 transition-all duration-300">
+            <Reveal key={project.id} delay={index * 80}>
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col hover:bg-white/10 hover:border-pink-400/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-500/10 transition-all duration-300">
               <div className={`w-10 h-1 rounded-full bg-gradient-to-r ${accents[index % 2]} mb-6`} />
               {project.logo_url && (
                 <img src={project.logo_url} alt="" className="h-12 w-12 rounded-lg object-cover mb-4" />
@@ -68,6 +70,7 @@ export default function Projects() {
                 </a>
               )}
             </div>
+            </Reveal>
           ))}
         </div>
       )}
