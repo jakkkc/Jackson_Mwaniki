@@ -12,6 +12,7 @@ import Skills from './pages/Skills'
 import Contact from './pages/Contact'
 import AdminLogin from './pages/admin/AdminLogin'
 import AdminProjects from './pages/admin/AdminProjects'
+import AdminContent from './pages/admin/AdminContent'
 
 function App() {
   return (
@@ -33,6 +34,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <AdminProjects />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/content"
+              element={
+                <ProtectedRoute>
+                  <AdminContent />
                 </ProtectedRoute>
               }
             />

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 type Project = {
   id: string
@@ -121,6 +121,9 @@ export default function AdminProjects() {
           Sign out
         </button>
       </div>
+      <Link to="/admin/content" className="text-blue-400 hover:text-blue-300 transition-colors font-sans normal-case text-sm mb-10 inline-block">
+        Edit site text &rarr;
+      </Link>
 
       <form onSubmit={handleSubmit} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 mb-10 space-y-4">
         <h2 className="uppercase text-lg text-slate-200 tracking-wide mb-2">
